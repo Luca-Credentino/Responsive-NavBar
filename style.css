@@ -1,0 +1,177 @@
+/* Google Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.cocacola-logo{
+    width: 140px;
+    height: 42px;   
+    margin-top: 4px;
+    padding: 8px;
+    padding-bottom: 2px;
+    margin-right: auto;
+    margin-left: 2rem;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.navbar{ background-color: #FF2626;}
+
+.navbar-container{
+    width: 100%;
+    margin-left: auto;
+}
+
+ul{ 
+    color: white;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1rem;
+    
+}
+
+li{ margin: 1.3rem ; }
+
+a { 
+    font-weight: 600;
+    color: white;
+    text-decoration: none; 
+    cursor: pointer; 
+    text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+}
+
+
+.home{
+    transition: 500ms;
+    padding: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: black;
+    border-radius: 20px;
+}
+
+/* Hamburger Menu  */
+
+
+
+.responsive-navbar{
+    visibility: hidden;
+    position: relative;
+    left: 12rem;
+    bottom: 24rem;
+    display: flex;
+    flex-direction: column;
+    background: #FF2626;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    width: 200px;
+    color: white;
+    transition: 400ms
+}
+.responsive-navbar li{
+    list-style: none;
+    margin-left: 6rem;
+    padding-bottom: 12px;
+    margin-right: 8px;
+}
+
+.menu-btn{
+    visibility: hidden;
+    display: flex;
+    height: 50px;
+    width: 50px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+.hamburger-center-line{
+    position: absolute;
+    align-self: center;
+    height: 4px;
+    margin-left: 4px;
+    transition: 500ms;
+    border-radius: 16px;
+    width: 38px;
+    background-color: #fff;
+}
+
+.menu-btn::before, 
+.menu-btn::after{
+    content: "";
+    position: absolute;
+    align-self: center;
+    height: 4px;
+    margin-left: 4px;
+    border-radius: 16px;
+    width: 38px;
+    background-color: #fff;
+    transition: 1.5s
+}
+.menu-btn::before{
+    transform: translateY(12px);
+}
+.menu-btn::after{
+    transform: translateY(-12px);
+}
+
+/* ANIMATION */
+
+
+.menu-btn.open .hamburger-center-line{
+    transition: 500ms;
+    transform: translateX(-48px);
+    background: transparent;
+  
+}
+
+.menu-btn.open::after{
+    transition: 600ms;
+    transform: rotate(-45deg);
+}
+.menu-btn.open::before{
+    transition: 600ms;
+    transform: rotate(45deg) translate(1px, 1px);
+}
+
+/* media */
+
+@media only screen and (max-width: 375px ) {
+    .cocacola-logo {
+        visibility: hidden;
+    } 
+    .navbar-li{
+      display: none;
+    }
+    .menu-btn{
+        visibility: visible;
+        margin-left: auto;
+    }
+    .responsive-navbar.dropdown{
+        transition: 1000ms;
+        visibility: visible;
+    }
+}
+
+
+@media only screen and (max-width: 414px ) {
+    .cocacola-logo {
+        visibility: hidden;
+    } 
+    .navbar-li{
+        display: none;
+    }
+    .menu-btn{visibility: visible; margin-left: auto; }
+    .responsive-navbar.dropdown{
+        transition: all .5s all ease-in-out;
+        transform: translateY(24rem);
+        visibility: visible;
+        border-bottom-left-radius: 50%;
+    }
+}
